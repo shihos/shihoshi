@@ -1,33 +1,19 @@
 import React from 'react';
 import './App.scss';
 
-const MasonryHeader = props =>
-  <div className="masonry-header">
-    <img src="images/shlogo.png" alt="SHIHOSHI Logo" />
-  </div>;
+/*
+ * https://blackcrane.net/
+      <a href={props.src} target="_blank" rel="noopener noreferrer">
+      </a>
+ */
 
-const MasonryItem = props => {
+const ShowItem = props => {
   return (
-    <div className="masonry-item">
-      <div className="masonry-content">
-        <div className="masonry-img">
-          <a href={props.src} target="_blank" rel="noopener noreferrer">
-            <img src={props.src} alt="SHIHOSHI Snap" />
-          </a>
-        </div>
-      </div>
+    <div className="shs-item">
+      <img src={props.src} alt="SHIHOSHI Snap" />
     </div>
   );
 }
-
-const MasonryFooter = props =>
-  <div className="masonry-footer">
-    <p>
-      <a href="www.shihoshi.com" target="_blank" rel="external noopener noreferrer nofollow">SHIHOSHI</a>
-      &nbsp;(C) 2019&nbsp;
-      <a href="admin@shihoshi.com">contact</a>
-    </p>
-  </div>;
 
 // ES2018 property spread notation {...props}
 const App = () => {
@@ -49,13 +35,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <MasonryHeader title="SHIHOSHI" sub="Style" />
-      <div className="masonry-wrapper">
-        <div className="masonry">
-          {Items.map((it, i) => <MasonryItem key={i} src={it} />)}
-        </div>
+      <div className="shs-logo">
+        <img src="images/shlogo.png" alt="SHIHOSHI Logo" />
       </div>
-      <MasonryFooter />
+      {Items.map((it, i) => <ShowItem key={i} src={it} />)}
+      <div className="shs-footer">
+        <p>
+          <a href="www.shihoshi.com" target="_blank" rel="external noopener noreferrer nofollow">SHIHOSHI</a>
+          &nbsp;(C) 2019&nbsp;
+          <a href="mailto:admin@shihoshi.com">contact</a>
+        </p>
+      </div>
     </div>
   );
 }
