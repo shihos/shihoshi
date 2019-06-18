@@ -4,13 +4,21 @@
 
 .shs-logo {
   margin: 8px;
+  img {
+    width: 140px;
+  }
 }
 
 .shs-item {
   margin: 20px;
   img {
+    max-width: 1000px;  // original image width
     width: calc(100% - 40px);
     border: 1px solid rgba(20,20,20,.2);
+    filter: grayscale(1); //sepia(100%);
+    &:hover {
+      filter: none;
+    }
   }
 }
 
