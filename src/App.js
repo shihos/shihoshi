@@ -40,7 +40,7 @@ const App = () => {
       {Items.map((it, i) => <ShowItem key={i} src={it} />)}
       <div className="shs-footer">
         <p>
-          <a href="www.shihoshi.com" target="_blank" rel="external noopener noreferrer nofollow">SHIHOSHI</a>
+          <a href="https://www.shihoshi.com" target="_blank" rel="external noopener noreferrer nofollow">SHIHOSHI</a>
           &nbsp;(C) 2019&nbsp;
           <a href="mailto:admin@shihoshi.com">contact</a>
         </p>
